@@ -70,21 +70,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="arbol treantJS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnArbolTreantJSActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPreorden">
       <Properties>
         <Property name="text" type="java.lang.String" value="preorden"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPreordenActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnInorden">
       <Properties>
         <Property name="text" type="java.lang.String" value="inorden"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInordenActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPosorden">
       <Properties>
         <Property name="text" type="java.lang.String" value="posorden"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPosordenActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSalir">
       <Properties>

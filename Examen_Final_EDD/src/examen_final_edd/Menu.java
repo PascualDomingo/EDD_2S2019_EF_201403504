@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class Menu extends javax.swing.JFrame {
 
-    AvlLinealizada arrayAVL = new AvlLinealizada();
+    AvlLinealizada arrayAVL;
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
@@ -55,12 +55,32 @@ public class Menu extends javax.swing.JFrame {
         });
 
         btnArbolTreantJS.setText("arbol treantJS");
+        btnArbolTreantJS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArbolTreantJSActionPerformed(evt);
+            }
+        });
 
         btnPreorden.setText("preorden");
+        btnPreorden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreordenActionPerformed(evt);
+            }
+        });
 
         btnInorden.setText("inorden");
+        btnInorden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInordenActionPerformed(evt);
+            }
+        });
 
         btnPosorden.setText("posorden");
+        btnPosorden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPosordenActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -106,18 +126,57 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCargarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarArchivoActionPerformed
+        arrayAVL = new AvlLinealizada();
         try {
             abrirarchivo();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
         arrayAVL.escribir_avl_js();
+        arrayAVL.imprimir();
     }//GEN-LAST:event_btnCargarArchivoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnArbolTreantJSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArbolTreantJSActionPerformed
+        // TODO add your handling code here:
+        File objetofile = new File("libreria_TreaantJS//index.html");
+        try {
+            Desktop.getDesktop().open(objetofile);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnArbolTreantJSActionPerformed
+
+    private void btnInordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInordenActionPerformed
+        try {
+            // TODO add your handling code here:
+            arrayAVL.inorden();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnInordenActionPerformed
+
+    private void btnPreordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreordenActionPerformed
+        try {
+            // TODO add your handling code here:
+            arrayAVL.preorden();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnPreordenActionPerformed
+
+    private void btnPosordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPosordenActionPerformed
+        try {
+            // TODO add your handling code here:
+            arrayAVL.posorden();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnPosordenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,6 +259,7 @@ public class Menu extends javax.swing.JFrame {
                     String estudiante = country[1];
                     arrayAVL.insertar(carne, estudiante);
                 }
+                if(contador == 8) break;
                 contador++;
             }
 

@@ -1,0 +1,16 @@
+digraph G{ 
+graph[splines=ortho]; 
+node[shape=record]; 
+rankdir = LR; 
+"1 \n  ramirez" 
+ -> "3 \n  karen" 
+ -> "4 \n  salazar" 
+ -> "5 \n  pasco" 
+ -> "7 \n  yenita" 
+ -> "8 \n  nilda" 
+ -> "10 \n  yeni" 
+ -> "13 \n  darlin" 
+ -> "15 \n  mariela" 
+} 
+
+
